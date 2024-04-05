@@ -8,7 +8,7 @@ agv_state: "install"           # whether to install, or upgrade agv
 
 ncu_env:
 
-# Operating system releases and the minimum version of MAAS they can run
+# Operating system releases and the minimum version of AGV they can run
 supported_distributions:
   Ubuntu:
     "22.04":  # Jammy supports AGV >= 24.0
