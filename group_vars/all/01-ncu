@@ -4,7 +4,7 @@ enable_firewall: false       # Run the firewall setup tasks.
 
 # Installation variables
 agv_install_deb: "{{ agv_installation_type == 'deb' }}"
-agv_state: "install"           # whether to install, or upgrade maas
+agv_state: "install"           # whether to install, or upgrade agv 
 
 ncu_env:
 
