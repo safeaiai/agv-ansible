@@ -1,0 +1,23 @@
+# This playbook should deploy everything
+
+- hosts: localhost
+  tasks:
+    - name: "Ensure dist is up to date"
+      ansible.builtin.apt:
+        upgrade: "dist"
+        update_cache: true
+        cache_valid_time: 3600
+      become: true
+
+    - name: "Discover host architecture"
+      ansible.builtin.command: dpkg --print-architecture
+      register: arch_out
+      changed_when: false
+
+    - name: "Set architechture facts"
+      ansible.builtin.set_fact:
+        ubuntu_arch: "{{ arch_out.stdout }}"
+
+    - name: "Show machine architecture"
+      ansible.builtin.debug:
+        msg: "Running on {{ ubuntu_arch }}"
