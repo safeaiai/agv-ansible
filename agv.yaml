@@ -10,7 +10,7 @@
       become: true
 
     - name: "Discover host architecture"
-      ansible.builtin.command: dpkg --print-architecture
+      command: dpkg --print-architecture
       register: arch_out
       changed_when: false
 
